@@ -4,7 +4,7 @@ for making any dirctry a dit repository :-
 	--> If  you type 'git status' it will show git repository status if there is any git rep. or it will give error
 	
 How to create git repository:-
-	-- type "git init " in particular dir. it will convert that der. into a git repository and show .git folder
+	-- type "git init " in particular dir. it will convert that dir. into a git repository and show .git folder
 	--if you want to add all file into a git repository which in that dir. just type "git add --a" it will add all file once
 
 To make commit/snap shot:-
