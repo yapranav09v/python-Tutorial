@@ -1,0 +1,26 @@
+#Using a try except error handling
+
+#opening file that does exist
+f1 = open("pranav.txt")
+
+#using a try on file that does not exit or that gives error
+try:
+    f = open("does.txt")                             
+    #if we write does2.txt instead of thise it will run Esle statment  
+                                                                       
+#using exept Exception for printing important stuff 
+except Exception as e: #their are two another type of errors like "EOFError" and "IOError in the place of Exception"
+    print(e)
+#using else in except
+else:
+    print("Thise will print if except Exception does not work")
+
+#we use finaly print things which does not run during an error
+#In any case it will print or run that thing Exept it the file not exit lile that
+#It is also used to clean up a program after it completed using finally
+finally:
+    print("Run thise anyway...")
+    f1.close
+    
+#Thise will print as an exception
+print("Thise is important")    

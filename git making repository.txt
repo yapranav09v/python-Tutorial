@@ -1,0 +1,115 @@
+for making any dirctry a dit repository :-
+	-- go to that directry
+	--open git bash using shift+right click and more option and then open git bash
+	--> If  you type 'git status' it will show git repository status if there is any git rep. or it will give error
+	
+How to create git repository:-
+	-- type "git init " in particular dir. it will convert that der. into a git repository and show .git folder
+	--if you want to add all file into a git repository which in that dir. just type "git add --a" it will add all file once
+
+To make commit/snap shot:-
+	--type " git commit -m "initial commit"  > -m for message and "message" in the colon is message
+	-- To check commit and info. you can type " git log" 
+
+What if we modified files afte commit:-
+	-- If  you type 'git status' it will show that what file you modified
+	--To add that particular modified  file again type "git add 'file name' " 
+  
+How to delet our git repository:-
+	-- just type " rm -rf .git"  it will delet your git repo.
+	--To check it is deleted or not just type " git status " 
+
+We can make  a simple fiel like linux base system in git bash:- Using 'touch'  type: touch  fileName .log
+
+
+How to ingnore anwanted file in repository:-  like error.log this file we want to ingnore 
+		-- To ingnore such a file create a file using touch and name it .gitignore
+		-- Type "   touch .gitignore " 
+		-- and then write a error.log file name or any other file name inside .gitignore 
+		-- and if we type status after updating error.log git will simple ignore it
+
+
+Ignore multiple file's :-  just write *. file exstenation , Example > *.log and it will ignore that all files have a same exstenation
+
+
+Ignore directry folder:- Just type ' directry name' in   .gitignore it will ignore all  files in dir || Note:- git ignores empty directries atomaticaly
+
+How to check difference  between the staging area (just modified file without added) uith current working(unmodified/ before changing it)
+		---> just type :-  '  git diff  '  it will show difference  between them
+		--->if we want to see difference  after adding this fiel/ old modified file just type:-  '  git diff --staged  '  
+
+How to add and commit file at one command ( how to skip stagging area):-  type :-  '  git commit -a -m "Your message"  ' 
+		--- Note:- IT will not add untracked file with it (if you have any untracked files)  
+
+
+If we remove or rename file manualy :- then git will show that removed or renamed file is unstaged then we want to stage it in git mannualy
+And if we use git to remove or rename file:- then git will atomaticaly stage it after removing or renaming it
+		-- To delet/ remove using git type "   git rm ' file name'  " 	   eg.- git rm first.txt
+		-- To rename it type "  git mv " file name"  "changed name"       eg.- git mv first.txt  rename.txt
+
+To untrack file from git type:-  "  git rm --cached ' file name' "  then again you want to commit changes because it will show that file was deleted
+
+                                                                                 How to read changes using git Log
+
+if  we want to check comment and difference what has been changed :- then type "  git log -p "   and  "  git log -p -n " here 'n' means number of  comments and changes you want to see
+
+if we want to check it in short and on table data then type:-   "  git log --stat "
+
+                                                                                Read commit in customize way
+
+if we want to read commit in a customize way then type :-  "  git log --pretty=oneline " we can chane one line to full , short etc.   write after '=' without space
+
+how to see commits by time like before two days or somthing:-  " git log --since=2.days "   we can write after '='  3.days,hour,year,ect.    and change by 1,2,3..
+
+                                                                               Changing a old commit / editing commit
+
+if we want to change our old commit then type:-   "  git commit --amend "       amend means changing and then vim will open 
+		--To write a message press 'i' then you can write or edit commit
+		--To close the vim press 'escape' and then type ' :wq 'and press enter
+
+			            Staging unstaging and unmodifiening files
+To unstage staged file:- git restore --staged "file name" 
+
+To restore a changes after your file is modifed :- git checkout  --  "file name"           eg.  -    git checkout -- rename.txt
+
+And if you want to unmodify all files at ones then type :  -      git checkout -f   
+
+
+			             how to add/push our code/files to git repository
+
+first command:-         git remote add origin https://github.com/yapranav09v/git-tutorial.git  (you can see this command also on our git hub page)
+and then if you enter a :- 'git remote' command it will show one "remote"  that means you crated one remote to push
+and then if you enter : 'git remote -v'  it will show to url for pull(fetch) and push but both url look exact same
+(before running next command you have to creat a 'SSh key'  for the permission )
+then run command :- git push -u origin master
+it will push your code to git repository you can it!
+
+
+			              how to create SSh keys
+step 1;- add our email with thise command > $ ssh-keygen -t ed25519 -C "yapranav9@gmail.com"
+step2:- then press enter enter enter to the it get finish
+step3:- get pid id:> $ eval "$(ssh-agent -s)"
+step4:- then add identity with this command > $ ssh-add ~/.ssh/id_ed25519
+step5:- copy your ssh key in our clip board:> $ clip < ~/.ssh/id_ed25519.pub       you can also use ' tail' instead of 'clip<' to see it on your bash
+step6:> and past it in git hub 
+
+
+			        Git Alias
+syntax to convert any command into our own command for exmaple i want to convert git status into a git st then i will do 
+type:>   git config --global alias.st status
+
+                                                                           Branching in git
+To crate a new branch type command:-     git checkout -b 'branch name'    eg.-  git checkout develop
+
+The list of branch type:-     '  git branch '
+
+To check last commit in every branch in list type :-   '  git branch -v '
+
+Thise command  will show merged branches:-   ' git branch --merged '
+
+Thise command  will show non-merged branches:-   ' git branch --no-merged '
+
+To delet branch type :-  ' git branch -d "branch name" '         eg.- git branch -d issue2 
+
+TO push your branch to git hub type this command  :-  ' git push -u origin "branch name" '      eg.- git push -u origin bugfix
+  (branches are not atomatically goes to git hub with repository)
