@@ -24,6 +24,7 @@ def getvels():
     genderentry.delete(0, END)
     emergencyentry.delete(0, END)
     pymententry.delete(0, END)
+    foodentry.delete(0, END)
 
     Label(text="Succefull submited", fg="green", font="calibri 12 bold").grid(row=8, column=3)
     time.sleep(0.5)
@@ -79,7 +80,7 @@ foodservise = Checkbutton(text="Want to prebook Your Meals?", variable=foodservi
 foodservise.grid(row=6, column=3)
 
 #assinging a button and giving it command
-button = Button(text="Submit to pranav travels", command=getvels)
+button = Button(text="Submit to pranav travels", fg="blue",bg="silver", command=getvels)
 button.grid(row=7, column=3)
 Label(text="").grid(row=9, column=3)
 Button(text="Exit", fg="red", bg="grey", font="calibri 15 bold",width=9,relief=RIDGE, borderwidth=3, command=exit_fun).grid(row=10, column=3)
