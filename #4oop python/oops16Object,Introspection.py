@@ -2,16 +2,18 @@
 #making a class for using introspection
 class Introduction:
 
-    def __init__(self, fname, lname):
+    def __init__(self, fname, lname, lage):
         self.fname = fname
         self.lname = lname
+        self.lage = lage
 
     def name(self):
-        return f"The name is {self.fname} and last name is {self.lname} "
+        return f"The name is {self.fname} and last name is {self.lname} and he's age is {self . lage}"
 
-rohan = Introduction("Rohan", "sharma")
+rohan = Introduction("Rohan", "sharma", 18)
 
 print(rohan.name())
+
 
 #Using Introspection
 print(type(rohan))
@@ -21,4 +23,4 @@ print(dir(rohan))
 #Using inspect module
 import inspect
 
-print(inspect.getmembers(rohan))
+#print(inspect.getmembers(rohan))

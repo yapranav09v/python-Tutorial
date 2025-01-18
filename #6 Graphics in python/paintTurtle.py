@@ -8,7 +8,7 @@ wn = Screen()
 
 #giving canavas title paint & pencolor red
 wn.title("paint")
-t.pencolor("red")
+t.pencolor("blue")
 #using -1 for maximum speed
 t.speed(-1)
 
